@@ -17,27 +17,16 @@ body{
   margin: 0 auto;
 }
 
-.nav-center,
-.nav-right {
+.nav-center {
   list-style: none;
   display: flex;
   gap: 1.5rem;
   padding: 0;
   margin: 0;
-}
-
-.nav-left {
-  flex: 1;
-}
-
-.nav-center {
   flex: 1;
   justify-content: center;
 }
 
-.nav-right {
-  justify-content: flex-end;
-}
 
 footer {
   text-align: center;
