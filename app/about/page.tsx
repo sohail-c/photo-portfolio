@@ -2,16 +2,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <main className="p-6 max-w-2xl mx-auto">
-        {/* Navbar */}
-      <header>
-        <nav className="flex justify-center py-4 border-b border-gray-200">
-          <ul className="flex gap-6 text-lg font-medium">
-            <li><Link href="/" className="hover:text-blue-600">home</Link></li>
-            <li><Link href="/collections" className="hover:text-blue-600">collections</Link></li>
-            <li><Link href="/about" className="text-blue-600">about & contact</Link></li>
-          </ul>
-        </nav>
-      </header>
+    
       <h1 className="text-4xl font-bold mb-4">About & Contact</h1>
       <p className="mb-2">
         Hello! My name is Sohail Chutani and I&apos;m a Computer Engineering student at the University of Washington Bothell and a photographer.

@@ -4,17 +4,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="p-4">
-      {/* Navbar */}
-      <header>
-        <nav className="flex justify-center py-4 border-b border-gray-200">
-          <ul className="flex gap-6 text-lg font-medium">
-            <li><Link href="/" className="text-blue-600">home</Link></li>
-            <li><Link href="/collections" className="hover:text-blue-600">collections</Link></li>
-            <li><Link href="/about" className="hover:text-blue-600">about & contact</Link></li>
-          </ul>
-        </nav>
-      </header>
-
       {/* Masonry Gallery */}
       <section className="columns-2 md:columns-3 lg:columns-4 gap-4 mt-6 space-y-4">
         {[
