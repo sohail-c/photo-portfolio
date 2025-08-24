@@ -29,10 +29,7 @@ export default function Home() {
         ))}
       </section>
 
-      {/* Footer */}
-      <footer className="text-center py-8 text-sm text-gray-500">
-        <p>© nothing to see here</p>
-      </footer>
+      
     </main>
   );
 }
