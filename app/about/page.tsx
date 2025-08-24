@@ -15,10 +15,10 @@ export default function About() {
       />
 
       <p className="mb-2">
-        Hello! My name is Sohail Chutani and I&apos;m a Computer Engineering student at the University of Washington Bothell and a photographer.
+      Hello! My name is <strong>Sohail Chutani</strong> and I&apos;m a <strong>Computer Engineering student</strong> at UW Bothell and a hobbyist photographer.
       </p>
       <p className="mb-2">
-        This site is a work-in-progress project started in earnest in late August 2025.
+        This site is a work-in-progress project that started in earnest late August 2025.
       </p>
       <p className="mb-2">
         I&apos;ve been meaning to create a photography portfolio for a long time now and decided to finally try to do it this summer and make it a learning experience as well.
@@ -27,16 +27,13 @@ export default function About() {
         My goal is to create this site with a modern web stack. 
         My current plan is to use Next.js with the new App Router, 
         Tailwind CSS for styling, and Vercel for deployment. 
-        I also want to eventually integrate Supabase for storage my photos and possibly 
+        I also want to eventually integrate Supabase to store my photos and possibly 
         a CMS for easier content management. 
       </p>
       <p className="mb-2">
-        Lastly, I&apos;m also going to be trying to use LLMs 
-        like ChatGPT and Gemini as resources for this project rather than just searching for 
-        it on the web. AI seems like the direction the industry is going and I feel like
-        I need to get on the train so this project is one way I&apos;m trying to get
-        more comfortable with using LLMs. I&apos;m planning on using these LLMs through ChatGPT.com, 
-        GitHub Copilot, and T3 Chat.
+        Lastly, I&apos;m also going to be using LLMs as resources for this project. AI seems like the direction the industry is going so this project is one way I&apos;m working to get
+        more comfortable with using LLMs. I&apos;m planning on using these LLMs through T3 Chat, 
+        GitHub Copilot, and ChatGPT.com.
       </p>
       <p className="mb-2">
         Feel free to reach out to me at <Link href="mailto:sohail@chutani.com" className="text-blue-600 underline">sohail@chutani.com</Link>
