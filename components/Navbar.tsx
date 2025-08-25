@@ -36,7 +36,7 @@ export default function Navbar() {
                 pathname === '/about' ? 'text-blue-600' : 'hover:text-blue-600'
               }
             >
-              about & contact
+              about
             </Link>
           </li>
         </ul>

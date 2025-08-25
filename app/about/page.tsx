@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <main className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-center text-4xl font-bold mb-4">About & Contact</h1>
+      <h1 className="text-center text-4xl font-bold mb-4">About</h1>
 
       <Image
         src="/images/about.jpg"
