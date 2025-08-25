@@ -2,10 +2,10 @@
 import CollectionCard from "@/components/CollectionCard";
 
 const collections = [
-  { title: "Chicago 2024", slug: "chicago-2024", image: "/images/chicago.jpg" },
-  { title: "Oregon 2024", slug: "oregon-2024", image: "/images/oregon-3.jpg" },
-  { title: "Wildlife", slug: "wildlife", image: "/images/other-2.jpg" },
-  { title: "San Diego 2024", slug: "san-diego", image: "/images/san-diego-2.jpg" },
+  { title: "Chicago 2024", slug: "chicago-2024", image: "/images/thumbs/chicago.jpg" },
+  { title: "Oregon 2024", slug: "oregon-2024", image: "/images/thumbs/oregon-3.jpg" },
+  { title: "Wildlife", slug: "wildlife", image: "/images/thumbs/other-2.jpg" },
+  { title: "San Diego 2024", slug: "san-diego", image: "/images/thumbs/san-diego-2.jpg" },
 ];
 
 export default function CollectionsPage() {
