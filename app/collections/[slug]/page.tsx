@@ -1,4 +1,3 @@
-//app/collections/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery";
 
@@ -42,8 +41,14 @@ const collectionData: Record<string, string[]> = {
   ],
 };
 
-export default function CollectionPage({ params }: { params: { slug: string } }) {
-  const photos = collectionData[params.slug];
+export default async function CollectionPage({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  const { slug } = await params;
+  const photos = collectionData[slug];
+  
   if (!photos) return notFound();
   
   return (
