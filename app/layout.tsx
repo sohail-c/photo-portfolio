@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "A responsive photo portfolio built with Next.js, featuring a masonry gallery and lightbox.",
     url: "https://sohailchutani.com",
     siteName: "Sohail Chutani — Photo Portfolio",
-    //images: ["/og-image.jpg"], // place a 1200x630 image in /public
+    images: ["/og-image.jpg"],
     type: "website",
   },
   icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
