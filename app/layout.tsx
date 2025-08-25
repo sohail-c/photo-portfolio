@@ -16,7 +16,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Sohail Chutani",
-  description: "Photography portfolio of Sohail Chutani",
+  description: "A responsive photo portfolio built with Next.js, featuring a masonry gallery and lightbox.",
+  openGraph: {
+    title: "Sohail Chutani | Photo Portfolio",
+    description:
+      "A responsive photo portfolio built with Next.js, featuring a masonry gallery and lightbox.",
+    url: "https://sohailchutani.com",
+    siteName: "Sohail Chutani — Photo Portfolio",
+    //images: ["/og-image.jpg"], // place a 1200x630 image in /public
+    type: "website",
+  },
+  icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
 };
 
 export default function RootLayout({
