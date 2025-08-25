@@ -1,7 +1,22 @@
+'use client';
 import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react";
+import Lightbox from "@/components/Lightbox";
 
 export default function Home() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
+  const openLightbox = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setSelectedImage("");
+  };
+
   return (
     <main className="p-4">
       {/* Masonry Gallery */}
@@ -24,12 +39,17 @@ export default function Home() {
             alt={img}
             width={600}
             height={400}
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-md cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openLightbox(`/images/${img}`)}
           />
         ))}
       </section>
 
-      
+      <Lightbox 
+        isOpen={lightboxOpen}
+        imageSrc={selectedImage}
+        onClose={closeLightbox}
+      />
     </main>
   );
 }
