@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
 
 type LightboxProps = {
   isOpen: boolean;
@@ -10,6 +11,19 @@ type LightboxProps = {
 };
 
 export default function Lightbox({ isOpen, imageSrc, onClose }: LightboxProps) {
+  useEffect(() => {
+    if (!isOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [isOpen, onClose]);
   if (!isOpen) return null;
 
   return (
@@ -23,6 +37,7 @@ export default function Lightbox({ isOpen, imageSrc, onClose }: LightboxProps) {
       >
         <button
           onClick={onClose}
+          aria-label="Close lightbox"
           className="absolute -top-6 -right-6 bg-black/50 text-white text-2xl font-bold hover:bg-black/70 w-8 h-8 rounded-full flex items-center justify-center z-10"
         >
           &times;
