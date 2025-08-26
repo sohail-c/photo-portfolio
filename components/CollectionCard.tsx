@@ -16,8 +16,17 @@ export default function CollectionCard({ title, slug, image }: CollectionCardPro
           alt={title}
           className="w-full h-64 object-cover transition-transform group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-          <p className="text-white text-xl font-semibold">{title}</p>
+        <div
+          className="
+            absolute inset-0 flex items-center justify-center
+            bg-black/40
+            text-white text-xl font-semibold
+            opacity-100
+            md:opacity-0 md:group-hover:opacity-100
+            transition
+          "
+        >
+          {title}
         </div>
       </div>
     </Link>

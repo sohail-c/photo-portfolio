@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery";
-
+import Breadcrumbs from "@/components/Breadcrumbs";
 const collectionData: Record<string, string[]> = {
   "chicago-2024": [
     "chicago.jpg",
@@ -53,6 +53,7 @@ export default async function CollectionPage({
   
   return (
     <main className="p-6">
+      <Breadcrumbs />
       <Gallery photos={photos} />
     </main>
   );
