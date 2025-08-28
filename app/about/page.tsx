@@ -6,8 +6,8 @@ export default function About() {
     <main className="p-6 max-w-2xl mx-auto">
       <h1 className="text-center text-4xl font-bold mb-4">About</h1>
 
-      <Image
-        src="/images/about.jpg"
+      <img
+        src="/images/thumbs/about.jpg"
         alt="A picture of me in a University of Washington Bothell purple sweatshirt"
         width={160}
         height={160}
@@ -41,12 +41,12 @@ export default function About() {
 
       <div className="mt-6 flex justify-center gap-6">
         <Link href="https://github.com/sohail-c" target="_blank" className="flex items-center gap-2 text-gray-800 hover:text-black transition">
-          <Image src="/github.svg" alt="GitHub" width={24} height={24} />
+          <img src="/github.svg" alt="GitHub" width={24} height={24} />
           <span className="hidden sm:inline">GitHub</span>
         </Link>
 
         <Link href="https://linkedin.com/in/sohailchutani" target="_blank" className="flex items-center gap-2 text-gray-800 hover:text-black transition">
-          <Image src="/linkedin.svg" alt="LinkedIn" width={24} height={24} />
+          <img src="/linkedin.svg" alt="LinkedIn" width={24} height={24} />
           <span className="hidden sm:inline">LinkedIn</span>
         </Link>
       </div>

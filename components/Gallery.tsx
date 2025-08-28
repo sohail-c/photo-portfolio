@@ -31,6 +31,7 @@ export default function Gallery({ photos }: { photos: string[] }) {
             height={400}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"
+            unoptimized
             onClick={() => openLightbox(`/images/full/${img}`)}
           />
         ))}

@@ -48,6 +48,7 @@ export default function Lightbox({ isOpen, imageSrc, onClose }: LightboxProps) {
           width={800}
           height={600}
           className="max-w-full max-h-[92vh] object-contain"
+          unoptimized
         />
       </div>
     </div>
