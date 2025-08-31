@@ -16,6 +16,10 @@ Deployed with **Vercel**.
 - **Lightbox photo viewer** for immersive image browsing  
 - Collections with dynamic routes  
 - About page with social links  
+## TODO
+- Improve image loading time and responsiveness
+- Add filters and sorting
+    - filter navigation options for collection (e.g, sort or filter by date)
 ## License
 
 - **Code**: MIT License  
