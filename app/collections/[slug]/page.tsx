@@ -39,6 +39,24 @@ const collectionData: Record<string, string[]> = {
     "san-diego-9.jpg",
     "san-diego-10.jpg",
   ],
+  "senior-sendoff": [
+    "senior-sendoff.jpg",
+    "senior-sendoff-2.jpg",
+    "senior-sendoff-3.jpg",
+    "senior-sendoff-4.jpg",
+    "senior-sendoff-5.jpg",
+    "senior-sendoff-6.jpg",
+    "senior-sendoff-7.jpg",
+    "senior-sendoff-8.jpg",
+    "senior-sendoff-9.jpg",
+    "senior-sendoff-10.jpg",
+    "senior-sendoff-11.jpg",
+    "senior-sendoff-12.jpg",
+    "senior-sendoff-13.jpg",
+    "senior-sendoff-14.jpg",
+    "senior-sendoff-15.jpg",
+    "senior-sendoff-16.jpg",
+  ],
 };
 
 export default async function CollectionPage({ 
