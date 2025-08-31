@@ -1,7 +1,6 @@
 // components/Gallery.tsx
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import Lightbox from "./Lightbox";
 
@@ -23,7 +22,7 @@ export default function Gallery({ photos }: { photos: string[] }) {
     <>
       <section className="columns-2 md:columns-3 lg:columns-4 gap-4 mt-6 space-y-4">
         {photos.map((img, i) => (
-          <Image
+          <img
             key={i}
             src={`/images/thumbs/${img}`}
             alt={img}
@@ -31,7 +30,6 @@ export default function Gallery({ photos }: { photos: string[] }) {
             height={400}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"
-            unoptimized
             onClick={() => openLightbox(`/images/full/${img}`)}
           />
         ))}
