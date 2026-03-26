@@ -3,20 +3,20 @@ import type { Project } from "@/content/types";
 export const projects: Project[] = [
   {
     slug: "photo-portfolio",
-    title: "Personal Portfolio Platform",
+    title: "Photo Portfolio Website",
     summary:
-      "A static-first Next.js site that combines engineering portfolio work with photography collections.",
+      "A Next.js site for photography, personal projects, and future portfolio work.",
     description: [
-      "I started this project as a photography portfolio, then expanded it into a broader personal site that can eventually showcase software projects, writing, and a more complete online presence.",
-      "The current direction emphasizes a typed local content layer, static export readiness, and a lightweight image workflow that does not depend on platform-specific optimization limits.",
+      "This project started as a photography portfolio and is gradually being expanded into a broader personal website.",
+      "It currently uses Next.js, TypeScript, and a local content layer so the structure is easier to maintain and extend later.",
     ],
     year: "2025-2026",
     status: "Active",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Static Export"],
     highlights: [
-      "Centralized content into shared typed modules for easier future CMS migration.",
-      "Added statically generated photo routes that are ready for Cloudflare Pages hosting.",
-      "Started reshaping the site from a gallery-first app into a broader personal portfolio.",
+      "Photo collections are generated from shared content files.",
+      "The site builds as a static export.",
+      "The structure now supports separate home, projects, photos, and about pages.",
     ],
     featured: true,
     links: {

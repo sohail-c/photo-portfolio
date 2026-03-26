@@ -6,7 +6,7 @@ export const photoCollections: PhotoCollection[] = [
     slug: "senior-sendoff",
     image: "/images/thumbs/senior-sendoff.jpg",
     description:
-      "Event coverage from UW Bothell IEEE Senior Sendoff, focused on candid moments and celebration.",
+      "Photos from the UW Bothell IEEE Senior Sendoff event.",
     date: "2025-06-01",
     featured: true,
     photos: [
@@ -33,7 +33,7 @@ export const photoCollections: PhotoCollection[] = [
     slug: "san-diego",
     image: "/images/thumbs/san-diego-2.jpg",
     description:
-      "A coastal set built around warm evening light, architecture, and street-level details.",
+      "Photos from a San Diego trip in 2024.",
     date: "2024-01-01",
     location: "San Diego, CA",
     featured: true,
@@ -55,7 +55,7 @@ export const photoCollections: PhotoCollection[] = [
     slug: "oregon-2024",
     image: "/images/thumbs/oregon-3.jpg",
     description:
-      "A smaller landscape-driven set with forest textures, open space, and Pacific Northwest atmosphere.",
+      "A small set of photos from Oregon in 2024.",
     date: "2024-01-01",
     location: "Oregon",
     featured: true,
@@ -70,7 +70,7 @@ export const photoCollections: PhotoCollection[] = [
     slug: "chicago-2024",
     image: "/images/thumbs/chicago.jpg",
     description:
-      "Architecture, street scenes, and city-scale framing from a Chicago trip in 2024.",
+      "Photos from Chicago in 2024.",
     date: "2024-01-01",
     location: "Chicago, IL",
     featured: true,
@@ -90,7 +90,7 @@ export const photoCollections: PhotoCollection[] = [
     slug: "wildlife",
     image: "/images/thumbs/other-2.jpg",
     description:
-      "A mixed wildlife collection centered on animal portraits and patient observation.",
+      "A wildlife collection.",
     date: "2024-01-01",
     featured: true,
     photos: [

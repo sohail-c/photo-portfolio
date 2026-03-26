@@ -7,19 +7,14 @@ export const metadata = {
 
 export default function PhotosPage() {
   return (
-    <main className="px-4 py-10">
+    <main className="mx-auto max-w-6xl px-4 py-10">
       <section className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-stone-500">
+          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
             Photography
-          </p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl">
-            Collections shaped by travel, events, wildlife, and patient observation.
           </h1>
-          <p className="mt-4 text-lg leading-8 text-stone-700">
-            This section is the visual side of the site: trips, campus events,
-            city studies, and the image sets that still motivated the original
-            version of the portfolio.
+          <p className="mt-4 text-base text-gray-600">
+            Collections from travel, events, and wildlife photography.
           </p>
         </div>
 

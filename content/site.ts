@@ -4,12 +4,12 @@ export const siteConfig: SiteConfig = {
   name: "Sohail Chutani",
   title: "Sohail Chutani",
   description:
-    "Computer Engineering student building software, documenting places, and turning this portfolio into a home for both projects and photography.",
+    "Personal website and photography portfolio for Sohail Chutani.",
   email: "sohail@chutani.com",
   location: "Seattle, WA",
-  tagline: "Computer Engineering student building software and chasing better light.",
+  tagline: "Computer Engineering student at UW Bothell.",
   intro:
-    "This site is evolving into a broader personal portfolio for engineering work, photography, and the systems behind both.",
+    "A personal website for projects, photography, and ongoing work.",
   socialLinks: {
     github: "https://github.com/sohail-c",
     linkedin: "https://linkedin.com/in/sohailchutani",

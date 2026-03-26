@@ -20,20 +20,20 @@ export default async function PhotoCollectionPage({
   if (!collection) return notFound();
 
   return (
-    <main className="px-4 py-8">
+    <main className="mx-auto max-w-6xl px-4 py-8">
       <section className="mx-auto max-w-6xl">
         <Breadcrumbs />
 
-        <div className="max-w-3xl rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-[0_24px_80px_-48px_rgba(32,24,16,0.45)]">
-          <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
+        <div className="max-w-3xl">
+          <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
             <span>{new Date(collection.date).getFullYear()}</span>
             {collection.location ? <span>{collection.location}</span> : null}
           </div>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-stone-950">
+          <h1 className="mt-3 text-4xl font-bold text-gray-900">
             {collection.title}
           </h1>
           {collection.description ? (
-            <p className="mt-4 text-lg leading-8 text-stone-700">
+            <p className="mt-4 text-base text-gray-600">
               {collection.description}
             </p>
           ) : null}
