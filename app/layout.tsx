@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { siteConfig } from "@/content/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sohail Chutani",
-  description: "A responsive photo portfolio built with Next.js, featuring a masonry gallery and lightbox.",
+  metadataBase: new URL("https://sohailchutani.com"),
+  title: siteConfig.name,
+  description: siteConfig.description,
   openGraph: {
-    title: "Sohail Chutani | Photo Portfolio",
-    description:
-      "A responsive photo portfolio built with Next.js, featuring a masonry gallery and lightbox.",
+    title: siteConfig.title,
+    description: siteConfig.description,
     url: "https://sohailchutani.com",
     siteName: "Sohail Chutani — Photo Portfolio",
     images: ["/og-image.jpg"],
