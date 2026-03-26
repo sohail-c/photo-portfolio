@@ -2,10 +2,20 @@ import type { SiteConfig } from "@/content/types";
 
 export const siteConfig: SiteConfig = {
   name: "Sohail Chutani",
-  title: "Sohail Chutani | Photo Portfolio",
+  title: "Sohail Chutani",
   description:
-    "A responsive photo portfolio built with Next.js, featuring a masonry gallery and lightbox.",
+    "Computer Engineering student building software, documenting places, and turning this portfolio into a home for both projects and photography.",
   email: "sohail@chutani.com",
+  location: "Seattle, WA",
+  tagline: "Computer Engineering student building software and chasing better light.",
+  intro:
+    "This site is evolving into a broader personal portfolio for engineering work, photography, and the systems behind both.",
+  socialLinks: {
+    github: "https://github.com/sohail-c",
+    linkedin: "https://linkedin.com/in/sohailchutani",
+  },
+  featuredProjectSlugs: ["photo-portfolio"],
+  featuredPhotoSlugs: ["senior-sendoff", "san-diego", "chicago-2024"],
   homeGalleryPhotos: [
     "chicago.jpg",
     "chicago-2.jpg",

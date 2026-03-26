@@ -1,54 +1,91 @@
 import Link from "next/link";
+import { siteConfig } from "@/content/site";
 
 export default function About() {
   return (
-    <main className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-center text-4xl font-bold mb-4">About</h1>
+    <main className="px-4 py-10">
+      <section className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+        <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-6 shadow-[0_24px_80px_-48px_rgba(32,24,16,0.45)]">
+          <img
+            src="/images/thumbs/about.jpg"
+            alt="A picture of Sohail Chutani in a University of Washington Bothell sweatshirt"
+            width={320}
+            height={320}
+            className="h-auto w-full rounded-[1.5rem] object-cover"
+          />
+          <div className="mt-6 space-y-2 text-sm text-stone-600">
+            <p className="font-semibold uppercase tracking-[0.24em] text-stone-500">
+              Based in {siteConfig.location}
+            </p>
+            <p>Computer Engineering student at UW Bothell.</p>
+            <p>Interested in software, systems, and visual storytelling.</p>
+          </div>
+        </div>
 
-      <img
-        src="/images/thumbs/about.jpg"
-        alt="A picture of me in a University of Washington Bothell purple sweatshirt"
-        width={160}
-        height={160}
-        className="w-60 h-60 rounded-full mx-auto mb-8 object-cover"
-      />
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-stone-500">
+            About
+          </p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl">
+            Building a personal site that can hold both engineering work and photography.
+          </h1>
 
-      <p className="mb-2">
-      Hello! My name is <strong>Sohail Chutani</strong> and I&apos;m a <strong>Computer Engineering student</strong> at UW Bothell and a hobbyist photographer.
-      </p>
-      <p className="mb-2">
-        This site is a work-in-progress project that started in earnest late August 2025.
-      </p>
-      <p className="mb-2">
-        I&apos;ve been meaning to create a photography portfolio for a long time now and decided to finally try to do it this summer and make it a learning experience as well.
-      </p>
-      <p className="mb-2">
-        My goal is to create this site with a modern web stack. 
-        My current plan is to use Next.js with the new App Router, 
-        Tailwind CSS for styling, and Vercel for deployment. 
-        I also want to eventually integrate Supabase to store my photos and possibly 
-        a CMS for easier content management. 
-      </p>
-      <p className="mb-2">
-        Lastly, I&apos;m also going to be using LLMs as resources for this project. AI seems like the direction the industry is going so this project is one way I&apos;m working to get
-        more comfortable with using LLMs. I&apos;m planning on using these LLMs through T3 Chat, 
-        GitHub Copilot, and ChatGPT.com.
-      </p>
-      <p className="mb-2">
-        Feel free to reach out to me at <Link href="mailto:sohail@chutani.com" className="text-blue-600 underline">sohail@chutani.com</Link>
-      </p>
+          <div className="mt-6 space-y-5 text-lg leading-8 text-stone-700">
+            <p>
+              I&apos;m <strong>Sohail Chutani</strong>, a <strong>Computer
+              Engineering student</strong> at UW Bothell who likes building
+              software and carrying a camera whenever there&apos;s a reason to
+              slow down and look harder.
+            </p>
+            <p>
+              This project started as a photography portfolio, but I&apos;m now
+              reshaping it into a broader personal site. The goal is to make it
+              useful both as a place to share image collections and as a way to
+              present engineering work, technical interests, and the systems
+              thinking behind both.
+            </p>
+            <p>
+              On the engineering side, I&apos;m interested in learning by
+              building real things: frontend architecture, deployment tradeoffs,
+              typed content systems, and the workflow choices that make a site
+              easier to maintain over time.
+            </p>
+            <p>
+              If you want to reach out, email{" "}
+              <Link
+                href={`mailto:${siteConfig.email}`}
+                className="font-medium text-orange-700 underline decoration-orange-300 underline-offset-4"
+              >
+                {siteConfig.email}
+              </Link>
+              .
+            </p>
+          </div>
 
-      <div className="mt-6 flex justify-center gap-6">
-        <Link href="https://github.com/sohail-c" target="_blank" className="flex items-center gap-2 text-gray-800 hover:text-black transition">
-          <img src="/github.svg" alt="GitHub" width={24} height={24} />
-          <span className="hidden sm:inline">GitHub</span>
-        </Link>
-
-        <Link href="https://linkedin.com/in/sohailchutani" target="_blank" className="flex items-center gap-2 text-gray-800 hover:text-black transition">
-          <img src="/linkedin.svg" alt="LinkedIn" width={24} height={24} />
-          <span className="hidden sm:inline">LinkedIn</span>
-        </Link>
-      </div>
+          <div className="mt-8 flex flex-wrap gap-4 text-sm font-medium">
+            <Link
+              href={siteConfig.socialLinks.github}
+              target="_blank"
+              className="rounded-full border border-stone-300 px-4 py-2 text-stone-700 transition hover:border-stone-900 hover:text-stone-900"
+            >
+              GitHub
+            </Link>
+            <Link
+              href={siteConfig.socialLinks.linkedin}
+              target="_blank"
+              className="rounded-full border border-stone-300 px-4 py-2 text-stone-700 transition hover:border-stone-900 hover:text-stone-900"
+            >
+              LinkedIn
+            </Link>
+            <Link
+              href="/projects"
+              className="rounded-full bg-stone-900 px-4 py-2 text-white transition hover:bg-orange-700"
+            >
+              View projects
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

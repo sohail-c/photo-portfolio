@@ -17,13 +17,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sohailchutani.com"),
-  title: siteConfig.name,
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
   description: siteConfig.description,
   openGraph: {
-    title: siteConfig.title,
+    title: `${siteConfig.name} | Personal Portfolio`,
     description: siteConfig.description,
     url: "https://sohailchutani.com",
-    siteName: "Sohail Chutani — Photo Portfolio",
+    siteName: "Sohail Chutani",
     images: ["/og-image.jpg"],
     type: "website",
   },
