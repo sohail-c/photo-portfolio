@@ -29,7 +29,7 @@ export default function About() {
               other work I want to share online.
             </p>
             <p>
-              I&apos;m interested in software, web development, and building
+              I&apos;m interested in software, hardware, and building
               things that are useful and maintainable. Photography is still a
               big part of the site, but I also want this to be a place where I
               can showcase engineering work and build a stronger online

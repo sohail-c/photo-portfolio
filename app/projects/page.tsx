@@ -17,7 +17,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="mt-4 text-base text-gray-600">
-            Software and web projects I want to document more clearly over time.
+            Projects I want to document more clearly over time.
           </p>
         </div>
 
