@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { siteConfig } from "@/content/site";
 
 const geistSans = Geist({
@@ -16,17 +16,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sohailchutani.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.title,
+    default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   openGraph: {
-    title: `${siteConfig.name} | Personal Portfolio`,
+    title: siteConfig.name,
     description: siteConfig.description,
-    url: "https://sohailchutani.com",
-    siteName: "Sohail Chutani",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     images: ["/og-image.jpg"],
     type: "website",
   },
@@ -40,11 +40,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
-        
         {children}
         <Footer />
       </body>

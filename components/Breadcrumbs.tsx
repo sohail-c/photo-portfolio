@@ -1,50 +1,28 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-export default function Breadcrumbs() {
-  const pathname = usePathname();
-  const segments = pathname.split("/").filter(Boolean);
-  const labels: Record<string, string> = {
-    photos: "Photography",
-    projects: "Projects",
-    about: "About",
-  };
+export type Crumb = { label: string; href?: string };
 
-  const toLabel = (segment: string) =>
-    labels[segment] ??
-    segment
-      .split("-")
-      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join(" ");
+/** Breadcrumbs with explicit labels (so pages show real titles, not URL slugs). */
+export default function Breadcrumbs({ items }: { items: Crumb[] }) {
+  const all: Crumb[] = [{ label: "Home", href: "/" }, ...items];
 
   return (
-    <nav className="mb-6 text-sm text-stone-500">
-      <ol className="flex items-center space-x-2">
-        <li>
-          <Link href="/" className="text-stone-700 hover:underline">
-            Home
-          </Link>
-        </li>
-        {segments.map((segment, i) => {
-          const href = "/" + segments.slice(0, i + 1).join("/");
-          const isLast = i === segments.length - 1;
-          const label = toLabel(segment);
-
-          return (
-            <li key={i} className="flex items-center space-x-2">
-              <span>/</span>
-              {isLast ? (
-                <span className="text-stone-400">{label}</span>
-              ) : (
-                <Link href={href} className="text-stone-700 hover:underline">
-                  {label}
-                </Link>
-              )}
-            </li>
-          );
-        })}
+    <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-500">
+      <ol className="flex flex-wrap items-center gap-x-2">
+        {all.map((crumb, i) => (
+          <li key={i} className="flex items-center gap-x-2">
+            {i > 0 ? <span aria-hidden="true">/</span> : null}
+            {crumb.href && i < all.length - 1 ? (
+              <Link href={crumb.href} className="text-gray-700 hover:underline">
+                {crumb.label}
+              </Link>
+            ) : (
+              <span aria-current="page" className="text-gray-400">
+                {crumb.label}
+              </span>
+            )}
+          </li>
+        ))}
       </ol>
     </nav>
   );

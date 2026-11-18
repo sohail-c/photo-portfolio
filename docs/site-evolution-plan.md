@@ -1,5 +1,17 @@
 # Site Evolution Plan
 
+## Status (November 2026)
+
+- **Done:** Phase 1 (typed content in `content/`), Phase 2 (`/projects`, `/photos`, `/about`, plus `/resume` as an HTML page), Phase 3 (static export, `generateStaticParams`, per-page metadata, sitemap/robots).
+- **Done:** image pipeline (`pnpm images`, see `scripts/build-images.mjs`), as proposed under "Future image pipeline".
+- **Tried and reverted:** Phase 4 visual redesign (March 2026). The site keeps a plain style; change visuals in small, previewable steps.
+- **Dropped for now:** Cloudflare migration. Its motivation was Vercel image-optimization limits, which no longer apply since images are pre-sized and served as static files. Vercel's free tier is fine for a static site.
+- **Not needed yet:** `/contact` (email and links are in the footer and on About), CMS.
+
+The original plan follows for reference.
+
+---
+
 ## Goal
 
 Evolve this project from a simple photo portfolio into a broader personal site that:

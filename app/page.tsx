@@ -2,12 +2,19 @@ import Link from "next/link";
 import CollectionCard from "@/components/CollectionCard";
 import ProjectCard from "@/components/ProjectCard";
 import { photoCollectionsBySlug } from "@/content/photos";
-import { featuredProjects } from "@/content/projects";
-import Gallery from "@/components/Gallery";
+import { projectsBySlug } from "@/content/projects";
 import { siteConfig } from "@/content/site";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
+const linkClass = "text-blue-600 hover:underline";
+
 export default function Home() {
-  const featuredProject = featuredProjects[0];
+  const featuredProjects = siteConfig.featuredProjectSlugs
+    .map((slug) => projectsBySlug[slug])
+    .filter(Boolean);
   const featuredCollections = siteConfig.featuredPhotoSlugs
     .map((slug) => photoCollectionsBySlug[slug])
     .filter(Boolean);
@@ -15,63 +22,57 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
       <section className="max-w-3xl">
-        <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-          {siteConfig.name}
-        </h1>
+        <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">{siteConfig.name}</h1>
         <p className="mt-4 text-lg text-gray-700">{siteConfig.tagline}</p>
-        <p className="mt-4 text-base text-gray-600">{siteConfig.intro}</p>
-        <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium">
-          <Link href="/projects" className="text-blue-600 hover:underline">
-            View projects
+        <p className="mt-4 text-base leading-7 text-gray-600">{siteConfig.intro}</p>
+        <p className="mt-3 text-base leading-7 text-gray-600">{siteConfig.lookingFor}</p>
+        <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+          <Link href="/projects" className={linkClass}>
+            Projects
           </Link>
-          <Link href="/photos" className="text-blue-600 hover:underline">
-            View photography
+          <Link href="/resume" className={linkClass}>
+            Resume
           </Link>
-          <Link href="/about" className="text-blue-600 hover:underline">
-            About
+          <Link href="/photos" className={linkClass}>
+            Photography
           </Link>
+          <a href={`mailto:${siteConfig.email}`} className={linkClass}>
+            Email
+          </a>
+          <a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            LinkedIn
+          </a>
+          <a href={siteConfig.socialLinks.github} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            GitHub
+          </a>
         </div>
       </section>
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-semibold text-gray-900">Projects</h2>
-        <p className="mt-2 text-gray-600">
-          A place for software work, experiments, and ongoing portfolio
-          updates.
-        </p>
-        {featuredProject ? (
-          <div className="mt-6 max-w-3xl">
-            <ProjectCard project={featuredProject} />
-          </div>
-        ) : null}
-      </section>
-
-      <section className="mt-12">
+      <section className="mt-14">
         <div className="flex items-end justify-between gap-4">
-          <div>
-            <h2 className="text-2xl font-semibold text-gray-900">Photography</h2>
-            <p className="mt-2 text-gray-600">
-              A selection of photo collections from trips, events, and wildlife.
-            </p>
-          </div>
-          <Link href="/photos" className="text-sm font-medium text-blue-600 hover:underline">
-            View all
+          <h2 className="text-2xl font-semibold text-gray-900">Projects</h2>
+          <Link href="/projects" className="text-sm font-medium text-blue-600 hover:underline">
+            All projects
           </Link>
         </div>
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {featuredCollections.map((collection) => (
-            <CollectionCard key={collection.slug} {...collection} />
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-semibold text-gray-900">Recent images</h2>
-        <p className="mt-2 text-gray-600">
-          A broader mix from across the portfolio.
-        </p>
-        <div className="mt-4">
-          <Gallery photos={siteConfig.homeGalleryPhotos} />
+      <section className="mt-14">
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="text-2xl font-semibold text-gray-900">Photography</h2>
+          <Link href="/photos" className="text-sm font-medium text-blue-600 hover:underline">
+            All collections
+          </Link>
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredCollections.map((collection) => (
+            <CollectionCard key={collection.slug} collection={collection} />
+          ))}
         </div>
       </section>
     </main>
