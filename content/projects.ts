@@ -3,6 +3,7 @@ import type { Project } from "@/content/types";
 // Claims here should match what's supported by the project reports and the
 // current resume. In particular: the meter range is a design target, the FPGA
 // processor cores are third-party, and the FPGA board hasn't been used in a class.
+// Meter: B EE 425 assignment repeats yearly, so firmware source and the report stay private.
 
 const meter = "/images/projects/capacitance-meter";
 const fpga = "/images/projects/fpga-processor-system";
@@ -36,23 +37,31 @@ export const projects: Project[] = [
           "No single method covers that range well, so the meter has two measurement paths:",
         ],
         bullets: [
-          "Small capacitors set the frequency of a 555 timer oscillator. The ESP32-S3's hardware pulse counter measures that frequency.",
-          "Larger capacitors are charged from a constant-current source, and the firmware uses the ADC to time how fast the voltage rises. Relays select one of three current ranges.",
+          "Small capacitors: a TLC555 runs in astable mode with the unknown capacitor as its timing capacitor, so the output frequency depends on the capacitance. The ESP32-S3's hardware pulse counter measures that frequency.",
+          "Larger capacitors: a constant-current source built from an LT1001 precision op amp, an LT1009 2.5 V reference, and a PNP transistor charges the capacitor through one of three relay-selected 0.1% resistors. The firmware uses the ADC to time how fast the voltage rises, and C = I · Δt / ΔV.",
           "Every measurement starts with the 555. If the capacitor is too large, the firmware switches to the constant-current source and steps through the ranges until the charge time can be measured accurately.",
+        ],
+        figures: [
+          {
+            src: `${meter}/schematic.webp`,
+            alt: "KiCad schematic of the capacitance meter showing the power input, constant-current source, 555 timer, relay driver, capacitor input and discharge, and Arduino Nano ESP32 with OLED",
+            caption:
+              "Schematic: ±12 V input, constant-current source, 555 timer, relay driver, capacitor input/discharge, and the ESP32 module with OLED.",
+          },
         ],
       },
       {
         heading: "Hardware and firmware",
         body: [
-          "The board runs from a ±12 V supply, with relays driven from the ESP32 through a Darlington array. I put test points on the supply rails and the main signal nodes. They paid off during bring-up, making it quick to track down problems like cold solder joints. The enclosure has a window for the OLED and banana jacks for the test leads.",
+          "The board runs from a ±12 V split supply; the Nano ESP32's onboard regulator supplies 3.3 V for the 555 and the OLED. Five 12 V relays, driven through a ULN2803 Darlington array, select the measurement mode, the current range, and a discharge path that empties the capacitor before each constant-current measurement. I put test points on the supply rails and the main signal nodes. They paid off during bring-up, making it quick to track down problems like cold solder joints. The enclosure has a window for the OLED and banana jacks for the test leads.",
           "The firmware is C++ built with PlatformIO on the Arduino framework. Measurement and display code are kept separate, and every reading carries a status (such as timeout or out of range) that's shown on screen and logged over serial, so a bad reading says why it failed. On startup, an open-lead calibration measures the stray capacitance of the leads and subtracts it from later readings.",
         ],
         figures: [
           {
-            src: `${meter}/pcb-copper.webp`,
-            alt: "Copper layers of the two-layer meter PCB: top-layer traces in red over a bottom-layer ground pour in blue",
+            src: `${meter}/pcb-layout.webp`,
+            alt: "KiCad PCB layout of the meter with the ESP32 module, OLED header, relays, op amp, 555 timer, and labeled test points",
             caption:
-              "Copper layers of the meter's two-layer board (top traces in red, bottom ground pour in blue). The FPGA project page compares it with my next board.",
+              "Two-layer PCB layout in KiCad. The FPGA project page compares it with the four-layer board I designed next.",
           },
           {
             src: `${meter}/enclosure-cad.webp`,
@@ -80,7 +89,7 @@ export const projects: Project[] = [
       {
         heading: "Design files",
         body: [
-          "This was a course project, and the same assignment is given every year, so I'm keeping the schematic, source code, and full report private. I'm happy to walk through them in an interview.",
+          "This was a course project, and the same assignment is given every year, so I'm keeping the firmware source and full report private. I'm happy to walk through them in an interview.",
         ],
       },
     ],
