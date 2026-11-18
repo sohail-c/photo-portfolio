@@ -86,7 +86,13 @@ export default async function ProjectPage({ params }: Params) {
               ) : null}
             </div>
             {section.figures?.length ? (
-              <div className="mt-6 space-y-8">
+              <div
+                className={
+                  section.layout === "pair"
+                    ? "mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2"
+                    : "mt-6 space-y-8"
+                }
+              >
                 {section.figures.map((figure) => (
                   <ProjectFigure key={figure.src} figure={figure} />
                 ))}

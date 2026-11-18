@@ -28,6 +28,8 @@ export type ProjectSection = {
   body: string[];
   bullets?: string[];
   figures?: Figure[];
+  /** "pair" shows figures side by side on wider screens (e.g. before/after). */
+  layout?: "stack" | "pair";
 };
 
 export type ProjectLink = {

@@ -53,13 +53,14 @@
   "/images/full/senior-sendoff.jpg": [2048, 1536],
   "/images/projects/capacitance-meter/enclosure-cad.webp": [1400, 1114],
   "/images/projects/capacitance-meter/meter-front.jpg": [1200, 1269],
-  "/images/projects/capacitance-meter/pcb-layout.webp": [1400, 1404],
-  "/images/projects/capacitance-meter/schematic.webp": [2000, 1390],
+  "/images/projects/capacitance-meter/pcb-copper.webp": [1200, 1200],
   "/images/projects/fpga-processor-system/bench-setup.jpg": [1085, 634],
   "/images/projects/fpga-processor-system/block-diagram.webp": [1400, 1059],
   "/images/projects/fpga-processor-system/board-render.webp": [1400, 950],
   "/images/projects/fpga-processor-system/capture-reset-fetch.webp": [1599, 263],
   "/images/projects/fpga-processor-system/capture-sram-write.webp": [1599, 263],
   "/images/projects/fpga-processor-system/memory-board.jpg": [1105, 828],
+  "/images/projects/fpga-processor-system/pcb-copper.webp": [1400, 949],
+  "/images/projects/fpga-processor-system/pcb-power-plane.webp": [1400, 949],
   "/images/projects/kicad-workshop/blinker-render.jpg": [1400, 950]
 }
