@@ -277,8 +277,8 @@ export const projects: Project[] = [
     title: "This Website",
     period: "2025 – present",
     summary:
-      "Built with Next.js and TypeScript and exported as static HTML. Projects and photo collections live in typed content files, and a small script generates photo thumbnails and records image sizes.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+      "This site started in 2025 as a photo portfolio. It has since become a project for exploring software development with AI coding agents: most of the recent work, including the restructure, the image script, and drafting these pages from my project reports, was done by directing an agent and reviewing what it produced. The engineering projects on this site are my own work. It's built with Next.js and TypeScript and exported as static HTML.",
+    tags: ["AI coding agents", "Next.js", "TypeScript", "Tailwind CSS"],
     links: [{ label: "Source on GitHub", href: "https://github.com/sohail-c/photo-portfolio" }],
   },
 ];

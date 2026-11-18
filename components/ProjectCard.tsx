@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 /** Compact entry for smaller projects that don't have a page. */
 export function ProjectListItem({ project }: { project: Project }) {
   return (
-    <article className="rounded-lg border border-gray-200 bg-white p-5">
+    <article id={project.slug} className="scroll-mt-6 rounded-lg border border-gray-200 bg-white p-5">
       <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
         {project.period}
       </p>

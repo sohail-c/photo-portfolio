@@ -26,6 +26,14 @@ export default function Home() {
         <p className="mt-4 text-lg text-gray-700">{siteConfig.tagline}</p>
         <p className="mt-4 text-base leading-7 text-gray-600">{siteConfig.intro}</p>
         <p className="mt-3 text-base leading-7 text-gray-600">{siteConfig.lookingFor}</p>
+        <p className="mt-3 text-base leading-7 text-gray-600">
+          The site itself has also become a side project, where I explore building software with
+          AI coding agents.{" "}
+          <Link href="/projects#this-site" className={linkClass}>
+            More about that
+          </Link>
+          .
+        </p>
         <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
           <Link href="/projects" className={linkClass}>
             Projects
