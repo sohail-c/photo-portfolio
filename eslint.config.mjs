@@ -12,6 +12,11 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    // Images are pre-sized by `pnpm images` and served as static files from a
+    // static export, so next/image's optimizer isn't used; plain <img> is intentional.
+    rules: { "@next/next/no-img-element": "off" },
+  },
+  {
     ignores: [
       "node_modules/**",
       ".next/**",
